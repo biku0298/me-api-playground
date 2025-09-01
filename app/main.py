@@ -58,4 +58,5 @@ def search(q: str, db: Session = Depends(get_db)):
 
 @app.get("/health")
 def health():
-    return {"status": "ok"}
+    return {"status": "200"}
+
