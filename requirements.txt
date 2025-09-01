@@ -5,3 +5,4 @@ pydantic
 email-validator
 psycopg2
 python-dotenv
+jinja2
