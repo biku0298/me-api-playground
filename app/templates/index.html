@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio API</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+    </header>
+
+    <section id="profile">
+        <h2>Profile</h2>
+        <div id="profile-data"></div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul id="skills-data"></ul>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul id="projects-data"></ul>
+    </section>
+
+    <section id="work">
+        <h2>Work Experience</h2>
+        <ul id="work-data"></ul>
+    </section>
+
+    <section id="links">
+        <h2>Links</h2>
+        <ul id="links-data"></ul>
+    </section>
+
+    <script>
+        async function loadData() {
+            const profile = await fetch("/profile/1").then(res => res.json());
+            const skills = await fetch("/skills/").then(res => res.json());
+            const projects = await fetch("/projects/").then(res => res.json());
+            const work = await fetch("/work/").then(res => res.json());
+            const links = await fetch("/links/").then(res => res.json());
+
+            document.getElementById("profile-data").innerHTML = `
+                <p><strong>Name:</strong> ${profile.name}</p>
+                <p><strong>Email:</strong> ${profile.email}</p>
+                <p><strong>Bio:</strong> ${profile.bio}</p>
+            `;
+
+            document.getElementById("skills-data").innerHTML = skills.map(s => `<li>${s.name} (${s.level})</li>`).join("");
+
+            document.getElementById("projects-data").innerHTML = projects.map(p => `<li><a href="${p.link}" target="_blank">${p.title}</a> - ${p.description}</li>`).join("");
+
+            document.getElementById("work-data").innerHTML = work.map(w => `<li>${w.role} at ${w.company} (${w.years})</li>`).join("");
+
+            document.getElementById("links-data").innerHTML = links.map(l => `<li><a href="${l.url}" target="_blank">${l.platform}</a></li>`).join("");
+        }
+        loadData();
+    </script>
+</body>
+</html>
