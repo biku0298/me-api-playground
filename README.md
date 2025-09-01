@@ -8,12 +8,24 @@ Go to docs for better visual: https://me-api-playground-u3tg.onrender.com/docs
 
 A simple FastAPI-based playground project to practice building and deploying APIs.  
 This project demonstrates how to set up a modern Python web API with environment variables, routing, and deployment to Render.
+
 ## 📌 Features
-- FastAPI backend with automatic Swagger docs
-- Environment variable configuration (`.env`)
-- Modular project structure
-- Ready for deployment on Render
-- Can be extended with database integration (PostgreSQL / MySQL)
+Health Check Endpoint → Ensures the API is running by returning a simple 200 OK response.
+
+Database Integration → Connected to PostgreSQL using SQLAlchemy for reliable data storage.
+
+Seeded Data → Preloaded sample data available for testing and demonstration.
+
+Query Filtering → Fetch and filter data through API requests.
+
+Environment-based Config → Uses .env file and environment variables for secure database connection.
+
+FastAPI Powered → High-performance and easy-to-use Python web framework.
+
+Deployment Ready → Configured for smooth deployment on Render with PostgreSQL support.
+
+Scalable Structure → Code organized for future features like authentication, logging, and pagination.
+
 ## ⚙️ Tech Stack
 - **Backend:** 
 - **Server:** Uvicorn
