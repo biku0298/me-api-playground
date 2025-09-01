@@ -27,7 +27,7 @@ Deployment Ready → Configured for smooth deployment on Render with PostgreSQL 
 Scalable Structure → Code organized for future features like authentication, logging, and pagination.
 
 ## ⚙️ Tech Stack
-- **Backend:** 
+- **Backend:** FastAPI
 - **Server:** Uvicorn
 - **Language:** Python 3.10+
 - **Deployment:** Render (free tier)
