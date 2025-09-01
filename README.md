@@ -21,11 +21,4 @@ This project demonstrates how to set up a modern Python web API with environment
 - **Deployment:** Render (free tier)
 
 ---
-
-## 🔧 Installation & Setup
-
-Clone the repo:
-```bash
-git clone https://github.com/biku0298/me-api-playground.git
-cd me-api-playground
  
